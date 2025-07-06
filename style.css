@@ -1,0 +1,156 @@
+body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "aside main main"
+    "footer footer footer";
+  padding: 0px;
+  margin: 0;
+  width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header {
+  grid-area: header;
+  background: #3498db;
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
+
+nav {
+  grid-area: nav;
+  background: #2ecc71;
+  padding: 10px;
+  color: white;
+  text-align: center;  
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  transition: background 0.3s ease;
+}
+nav a:hover {
+  background: #27ae60;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+aside {
+    grid-area: aside;
+    padding: 10px;
+    gap:20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y:auto;
+}
+aside a {
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  transition: background 0.3s ease;
+}
+aside a:hover {
+  background: #bdc3c7;
+}
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+aside form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+main {
+    scroll-behavior: smooth;
+  grid-area: main;
+  padding: 10px;
+  overflow: auto;
+}
+
+footer {
+  grid-area: footer;
+  background: #34495e;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+article{
+    background: #ecf0f1;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 400px;
+}
+section{
+    background: #bdc3c7;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 400px;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 10px 0;
+    color: #2c3e50;
+    border-bottom: 3px solid #04253b;
+    width: fit-content;
+}
+/* Responsive Design */
+@media screen and (max-width: 1200px) and (min-width: 769px) {
+    body {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+        "header header header header"
+        "nav main main main"
+        "nav  aside aside aside"
+        "footer footer footer footer";
+        overflow: auto;
+    }
+    main, aside {
+        overflow:visible;
+    }
+    nav ul, aside ul {
+        flex-direction: column;
+        gap:20px;
+        }
+    }
+@media screen and (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+    overflow: auto;
+  }
+  main, aside {
+    overflow: visible;
+  }
+  nav a, aside a {
+    width: 100%;
+    text-align: center;
+  }
+    
+}
